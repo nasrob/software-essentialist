@@ -10,4 +10,8 @@ describe("fizzbuzz", () => {
         expect(fizzBuzz(3)).toEqual('Fizz')
     })
 
+    it('returns Buzz for 5', () => {
+        expect(fizzBuzz(5)).toEqual('Buzz')
+    })
+
 });
