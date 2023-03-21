@@ -6,5 +6,5 @@ export function fizzBuzz(number:number) {
     if (isMultipleOfThree) return 'Fizz'
     if (isMultipleOfFive) return 'Buzz'
 
-    return ''
+    return number.toString()
 }
