@@ -1,6 +1,10 @@
 export function fizzBuzz(number:number) {
-    if (number % 3 === 0 && number % 5 === 0) return 'FizzBuzz'
-    if (number % 3 === 0) return 'Fizz'
-    if (number % 5 === 0) return 'Buzz'
+    const isMultipleOfFive = number % 5 === 0
+    const isMultipleOfThree = number % 3 === 0
+
+    if (isMultipleOfThree && isMultipleOfFive) return 'FizzBuzz'
+    if (isMultipleOfThree) return 'Fizz'
+    if (isMultipleOfFive) return 'Buzz'
+
     return ''
 }
