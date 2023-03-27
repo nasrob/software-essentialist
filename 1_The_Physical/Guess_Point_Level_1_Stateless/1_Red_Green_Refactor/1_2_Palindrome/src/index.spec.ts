@@ -1,18 +1,21 @@
 import { PalindromeChecker } from './index';
 
 describe('palindrome checker', () => {
+    let palindromeChecker: PalindromeChecker;
+
+    beforeEach(() => {
+        palindromeChecker = new PalindromeChecker();
+    })
+
     it('class exists', () => {
-        let palindromeChecker = new PalindromeChecker();
         expect(palindromeChecker).toBeDefined();
     })
 
     it('should be able to tell that "mom" is a palindrome', () => {
-        let palindromeChecker = new PalindromeChecker();
         expect(palindromeChecker.isAPalindrome('mom')).toBeTruthy();
     })
 
     it('should be able to tell that "bill" is not a palindrome', () => {
-        let palindromeChecker = new PalindromeChecker();
         expect(palindromeChecker.isAPalindrome('bill')).toBeFalsy();
     })
 })
