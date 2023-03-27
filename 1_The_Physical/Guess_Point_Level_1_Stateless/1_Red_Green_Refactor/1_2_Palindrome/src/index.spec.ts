@@ -22,4 +22,8 @@ describe('palindrome checker', () => {
     it('should check plaindrome even case not matching', () => {
         expect(palindromeChecker.isAPalindrome('Mom')).toBeTruthy();
     })
+
+    it('should be able to tell that "Was It A Rat I Saw" sentence is a plaindrome', () => {
+        expect(palindromeChecker.isAPalindrome('Was It A Rat I Saw')).toBeTruthy();
+    })
 })
