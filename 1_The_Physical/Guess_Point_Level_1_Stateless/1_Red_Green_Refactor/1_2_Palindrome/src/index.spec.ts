@@ -18,4 +18,8 @@ describe('palindrome checker', () => {
     it('should be able to tell that "bill" is not a palindrome', () => {
         expect(palindromeChecker.isAPalindrome('bill')).toBeFalsy();
     })
+
+    it('should check plaindrome even case not matching', () => {
+        expect(palindromeChecker.isAPalindrome('Mom')).toBeTruthy();
+    })
 })
