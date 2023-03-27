@@ -26,4 +26,8 @@ describe('palindrome checker', () => {
     it('should be able to tell that "Was It A Rat I Saw" sentence is a plaindrome', () => {
         expect(palindromeChecker.isAPalindrome('Was It A Rat I Saw')).toBeTruthy();
     })
+
+    it('should be able to tell that "Never Odd or Even" sentence is a plaindrome', () => {
+        expect(palindromeChecker.isAPalindrome('Never Odd or Even')).toBeTruthy();
+    })
 })

@@ -1,6 +1,14 @@
 export class PalindromeChecker {
+    getReversedString(str: string) {
+        return str.split('').reverse().join('')
+    }
+
+    private stripSpaces(str: string) {
+        return str.split(' ').join('')
+    }
+
     isAPalindrome(str: string): boolean {
-        const reversed = str.split('').reverse().join('');
-        return str.toLowerCase().split(' ').join('') === reversed.toLowerCase().split(' ').join('');
+        const reversed = this.getReversedString(str);
+        return this.stripSpaces(str).toLowerCase() === this.stripSpaces(reversed).toLowerCase();
     }
 }
