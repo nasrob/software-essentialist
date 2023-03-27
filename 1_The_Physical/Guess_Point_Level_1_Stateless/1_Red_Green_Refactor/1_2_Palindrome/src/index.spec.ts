@@ -10,4 +10,9 @@ describe('palindrome checker', () => {
         let palindromeChecker = new PalindromeChecker();
         expect(palindromeChecker.isAPalindrome('mom')).toBeTruthy();
     })
+
+    it('should be able to tell that "bill" is not a palindrome', () => {
+        let palindromeChecker = new PalindromeChecker();
+        expect(palindromeChecker.isAPalindrome('bill')).toBeFalsy();
+    })
 })
