@@ -7,9 +7,15 @@ export type CheckedPasswordResponse = {
 
 export class PasswordChecker {
     public static checkPassword(password: string): CheckedPasswordResponse {
+        let errors: PasswordError[] = []
+
+        let isBetweenFiveAndFifteen = password.length >= 5 && password.length <= 15
+
+        if (!isBetweenFiveAndFifteen) errors.push('InvalidLengthError')
+
         return {
-            result: false,
-            errors: ['InvalidLengthError']
+            result: errors.length === 0,
+            errors
         }
     }
 }
