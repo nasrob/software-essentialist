@@ -16,16 +16,18 @@ describe('password validator', () => {
         })
     })
 
-    it('knows that "NasDev3" contain at least one digit', () => {
-        let output = PasswordChecker.checkPassword('NasDev3')
-        expect(output.result).toBeTruthy()
-        expect(output.errors).toHaveLength(0)
-    })
+    describe('Check for at least one digit', () => {
+        it.each([
+            ['NasDev3', true, []],
+            ['NasDev', false, ['MissingDigitError']],
+            ['maxwellTheBee', false, ['MissingDigitError']],
+        ])('knows that "%s" should return %s',
+        (input: string, result: boolean, errors: string[]) => {
+            let output = PasswordChecker.checkPassword(input)
 
-    it('knows that "NasDev" does not contain at least one digit', () => {
-        let output = PasswordChecker.checkPassword('NasDev')
-        expect(output.result).toBeFalsy()
-        expect(output.errors).toHaveLength(1)
-        expect(output.errors).toStrictEqual(['MissingDigitError'])
+            expect(output.result).toBe(result)
+            expect(output.errors).toHaveLength(errors.length)
+            expect(output.errors).toStrictEqual(errors)
+        })
     })
 })
